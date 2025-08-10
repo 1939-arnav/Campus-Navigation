@@ -66,7 +66,8 @@ def dijkstra(graph, start, end, blocked_nodes=None):
 # -------------------------
 # Gemini API call
 # -------------------------
-API_KEY = os.getenv("GEMINI_API_KEY")
+# API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = st.secrets["GEMINI_API_KEY"]
 URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
 def gemini_extract_locations(user_query):
@@ -162,3 +163,4 @@ if st.button("Find Path"):
             else:
                 st.success(f"Shortest distance: {distance}")
                 st.write("Path:", " → ".join(path))
+
