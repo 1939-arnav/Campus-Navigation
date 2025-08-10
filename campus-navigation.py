@@ -174,7 +174,8 @@ if st.button("Find Path"):
             if distance == float("inf"):
                 st.error("No path found!")
             else:
-                st.success(f"Shortest distance: {distance}")
+                st.success(f"Shortest distance: {distance} metres")
                 st.write("Path:", " → ".join(path))
+
 
 
