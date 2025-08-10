@@ -27,3 +27,37 @@ The result is a smart, user-friendly campus navigation assistant ideal for stude
 | `input.txt`        | Sample input query for testing                    |
 | `output.txt`       | Sample output result corresponding to input.txt  |
 | `README.md`        | This file                                        |
+
+---
+
+### Node Index
+1. Gate 1  
+2. Main Road  
+3. TAN Block  
+4. Nirvana  
+5. CS Block  
+6. LT (Lecture Theater)  
+7. Mechanical Workshops  
+8. Sports Center  
+9. Pool  
+10. Playground  
+11. Tennis Court  
+12. COS Complex  
+13. Football Ground  
+14. Hostel M  
+15. Hostel C  
+16. Hostel A  
+17. Hostel B  
+18. Hostel H  
+19. Hostel I  
+20. Polytechnic College  
+21. Gate 4  
+22. Old Library  
+23. Gate 2  
+24. PG Block  
+25. SBOP  
+26. Faculty Residence  
+27. Gate 3  
+28. B Block  
+29. C Block  
+30. D Block 
