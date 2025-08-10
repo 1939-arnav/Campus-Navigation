@@ -1,0 +1,10 @@
+1 How do I get from Gate 1 to Library avoiding Hostel B and Canteen?
+2 Find the shortest path from TAN Block to Sports Complex without passing through Admin Block.
+3 Can you tell me the way from Gate 2 to Auditorium avoiding Main Road and SBOP?
+4 What's the fastest route from Hostel A to Canteen if Hostel B is closed?
+5 Show me the path from Library to Gate 1 without going through TAN Block or CS Block.
+6 How can I reach the Auditorium from SBOP avoiding the Admin Block and Sports Complex?
+7 Give directions from Hostel C to Gate 2, but skip Hostel B and the Canteen.
+8 I want to go from CS Block to Main Road avoiding Gate 1.
+9 Plan a route from Admin Block to Hostel A avoiding Library and TAN Block.
+10 Is there a way from Sports Complex to Gate 1 without passing through Auditorium or SBOP?

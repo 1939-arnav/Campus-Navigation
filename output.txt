@@ -1,0 +1,10 @@
+1 Shortest distance: 8
+  Path: Gate 1 → Main Road → Library
+2 No Path Found
+
+3 Shortest distance: 12
+  Path: Gate 2 → Sports Complex → Auditorium
+4 Shortest distance: 19
+  Path: Hostel A → TAN Block → CS Block → SBOP → Admin Block → Canteen
+5 Shortest distance: 8
+  Path: Library → Main Road → Gate 1
