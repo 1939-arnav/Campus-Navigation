@@ -32,8 +32,8 @@ graph = {
     "B Block": {"SBOP": 100, "C Block": 80, "Main Road": 200},
     "C Block": {"B Block": 80, "D Block": 80},
     "D Block": {"C Block": 80, "CS Block": 100},
-    "Old Library": {"PG Block": 180},
-    "PG Block": {"Old Library": 180, "Gate 2": 250},
+    "Library": {"PG Block": 180},
+    "PG Block": {"Library": 180, "Gate 2": 250},
     "Gate 2": {"PG Block": 250, "Gate 1": 300, "Sports Complex": 70},
     "Sports Complex": {"Gate 2": 70, "Auditorium": 50},
     "Auditorium": {"Sports Complex": 50, "Admin Block": 40},
@@ -176,6 +176,7 @@ if st.button("Find Path"):
             else:
                 st.success(f"Shortest distance: {distance} metres")
                 st.write("Path:", " → ".join(path))
+
 
 
 
