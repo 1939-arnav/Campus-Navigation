@@ -8,6 +8,13 @@ The result is a smart, user-friendly campus navigation assistant ideal for stude
 
 ---
 
+## Deployment
+
+The application is deployed and accessible online at:  
+[https://campus-navigation.streamlit.app/](https://campus-navigation.streamlit.app/)
+
+---
+
 ## Features
 
 - Natural language parsing using **Google Gemini API**  
