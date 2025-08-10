@@ -5,29 +5,44 @@ import requests
 import json
 import copy
 
-# -------------------------
-# Full Thapar campus graph (assumed distances)
-# -------------------------
 graph = {
-    "Gate 1": {"Main Road": 2, "SBOP": 5},
-    "Main Road": {"TAN Block": 4, "Gate 1": 2, "Library": 6},
-    "TAN Block": {"CS Block": 3, "Main Road": 4, "Hostel A": 5},
-    "CS Block": {"SBOP": 6, "TAN Block": 3, "Library": 4},
-    "SBOP": {"Gate 1": 5, "CS Block": 6, "Admin Block": 3},
-    "Library": {"Main Road": 6, "CS Block": 4, "Hostel B": 5},
-    "Hostel A": {"TAN Block": 5, "Hostel B": 3},
-    "Hostel B": {"Library": 5, "Hostel A": 3, "Hostel C": 4},
-    "Hostel C": {"Hostel B": 4, "Canteen": 6},
-    "Canteen": {"Hostel C": 6, "Admin Block": 2},
-    "Admin Block": {"SBOP": 3, "Canteen": 2, "Auditorium": 4},
-    "Auditorium": {"Admin Block": 4, "Sports Complex": 5},
-    "Sports Complex": {"Auditorium": 5, "Gate 2": 7},
-    "Gate 2": {"Sports Complex": 7}
+    "Gate 1": {"Main Road": 150, "Gate 2": 300},
+    "Main Road": {"Gate 1": 150, "CS Block": 220, "B Block": 200},
+    "CS Block": {"Main Road": 220, "LT": 80, "D Block": 100},
+    "LT": {"CS Block": 80, "TAN Block": 180},
+    "TAN Block": {"LT": 180, "Nirvana": 120},
+    "Nirvana": {"TAN Block": 120, "COS Complex": 250},
+    "COS Complex": {"Nirvana": 250, "Tennis Court": 100},
+    "Tennis Court": {"COS Complex": 100, "Playground": 90},
+    "Playground": {"Tennis Court": 90, "Football Ground": 200},
+    "Football Ground": {"Playground": 200, "Sports Center": 150},
+    "Sports Center": {"Football Ground": 150, "Pool": 100},
+    "Pool": {"Sports Center": 100, "Hostel M": 250},
+    "Hostel M": {"Pool": 250, "Hostel C": 80},
+    "Hostel C": {"Hostel M": 80, "Hostel A": 70},
+    "Hostel A": {"Hostel C": 70, "Hostel B": 60},
+    "Hostel B": {"Hostel A": 60, "Hostel H": 100},
+    "Hostel H": {"Hostel B": 100, "Hostel I": 80},
+    "Hostel I": {"Hostel H": 80, "Polytechnic College": 200},
+    "Polytechnic College": {"Hostel I": 200, "Gate 4": 300},
+    "Gate 4": {"Polytechnic College": 300, "Gate 3": 250},
+    "Gate 3": {"Gate 4": 250, "Faculty Residence": 100},
+    "Faculty Residence": {"Gate 3": 100, "SBOP": 150},
+    "SBOP": {"Faculty Residence": 150, "B Block": 100},
+    "B Block": {"SBOP": 100, "C Block": 80, "Main Road": 200},
+    "C Block": {"B Block": 80, "D Block": 80},
+    "D Block": {"C Block": 80, "CS Block": 100},
+    "Old Library": {"PG Block": 180},
+    "PG Block": {"Old Library": 180, "Gate 2": 250},
+    "Gate 2": {"PG Block": 250, "Gate 1": 300, "Sports Complex": 70},
+    "Sports Complex": {"Gate 2": 70, "Auditorium": 50},
+    "Auditorium": {"Sports Complex": 50, "Admin Block": 40},
+    "Admin Block": {"Auditorium": 40, "Canteen": 20},
+    "Canteen": {"Admin Block": 20, "Hostel C": 60}
 }
 
-# -------------------------
-# Dijkstra's Algorithm (with blocked nodes)
-# -------------------------
+
+
 def dijkstra(graph, start, end, blocked_nodes=None):
     if blocked_nodes is None:
         blocked_nodes = []
@@ -63,9 +78,7 @@ def dijkstra(graph, start, end, blocked_nodes=None):
 
     return float("inf"), []
 
-# -------------------------
-# Gemini API call
-# -------------------------
+
 # API_KEY = os.getenv("GEMINI_API_KEY")
 API_KEY = st.secrets["GEMINI_API_KEY"]
 URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
@@ -163,4 +176,5 @@ if st.button("Find Path"):
             else:
                 st.success(f"Shortest distance: {distance}")
                 st.write("Path:", " → ".join(path))
+
 
